@@ -40,7 +40,16 @@ function validateForm() {
         return false;
     }
     resetLabels();
+    resetFields();
     openAlertBox();
+}
+function resetFields() {
+    inputName.value = "";
+    inputAddress.value = "";
+    unitPrice.value = "";
+    productName.value = "";
+    inputQuantity.value = "";
+    amount.value = "";
 }
 function checkValue(input) {
     if (input.value != "") {
