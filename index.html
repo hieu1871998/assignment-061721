@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Entry Form</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <script src="/resources/script/script.js"></script>
+</head>
+<body>
+    <header class="header bg-light shadow">
+        <div class="header-row">
+            <div class="header-logo-container">
+                <img class="header-logo" src="/favicon.ico">
+            </div>
+            <a class="header-title text-color-dark" href="/index.html">Order Entry Form</a>
+        </div>
+    </header>
+    <main class="main-layout">
+        <div class="form-container bg-light shadow rounded-corner">
+            <div class="form-title-row">
+                <span class="form-title text-color-dark">Fill in the details to place an order</span>
+            </div>
+            <form>
+                <div class="form-element-row">
+                    <span class="element-label-error">&times;</span><div class="element-label text-color-dark">Customer Name:</div><input id="inputName" class="rounded-corner-less border" name="inputName" type="text" required placeholder="enter your name" onchange="checkValue(this);">
+                </div>
+                <div class="form-element-row">
+                    <span class="element-label-error">&times;</span><div class="element-label text-color-dark">Customer Address:</div><textarea rows="3" id="inputAddress" class="rounded-corner-less border" name="inputAddress" type="text" required placeholder="enter your address" onchange="checkValue(this);"></textarea>
+                </div>
+                <div class="form-element-row">
+                    <span class="element-label-error">&times;</span><div class="element-label text-color-dark">Product Name:</div><select id="inputProduct" class="rounded-corner-less border text-color-dark" name="inputProduct" onchange="getPrice(this);calculateAmount();resetLabels()">
+                        <option value="">Select</option>
+                        <option value="324.12">Monitor</option>
+                        <option value="75.00">Mouse</option>
+                        <option value="122.85">Keyboard</option>
+                        <option value="194.64">Printer</option>
+                    </select>
+                </div>
+                <div class="form-element-row">
+                    <span class="element-label-error">&times;</span><div class="element-label text-color-dark">Unit Price ($):</div><input id="unitPrice" class="rounded-corner-less border" type="number" readonly placeholder="0">
+                </div>
+                <div class="form-element-row">
+                    <span class="element-label-error">&times;</span><div class="element-label text-color-dark">Quantity:</div><input id="inputQuantity" class="rounded-corner-less border" type="number" placeholder="0" required onchange="calculateAmount();">
+                </div>
+                <div class="form-element-row">
+                    <span class="element-label-error">&times;</span><div class="element-label text-color-dark">Amount ($):</div><input id="amount" class="rounded-corner-less border" type="number" readonly placeholder="0">
+                </div>
+                <div class="form-element-row">
+                    <span class="element-label-error">&times;</span><div class="element-label text-color-dark">Payment Mode:</div><select id="inputPayment" class="rounded-corner-less border text-color-dark">
+                        <option value="cash">Cash</option>
+                        <option value="check">Check</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                    </select>
+                </div>
+                <div class="form-button-row">
+                    <div class="form-buttons">
+                        <button type="submit" class="form-button-submit primary-color text-color-light no-border rounded-corner-less" onclick="validateForm(); return false;"><span>Submit</span></button>
+                        <button type="reset" class="form-button-reset text-color-dark border rounded-corner-less" onclick="resetLabels()"><span>Reset</span></button>
+                    </div>                    
+                </div>
+            </form>
+        </div>
+    </main>
+        <div id="alert-box" class="alert bg-light rounded-corner shadow">
+            <div class="alert-button-row">
+                <span class="alert-close-button" onclick="closeAlertBox()">&times;</span>
+            </div>
+            <div class="alert-text-row">
+                <span class="alert-text">Your order has been accepted and will be processed soon. Thank you.</span>
+            </div>
+        </div>
+</body>
+</html>
