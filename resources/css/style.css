@@ -1,8 +1,12 @@
+@font-face {
+    font-family: Google Sans;
+    src: url(/resources/fonts/GoogleSans-Regular.ttf);
+}
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Google Sans';
 }
 body {
     height: 100%;
@@ -105,6 +109,8 @@ body {
     font-size: 14px;
     padding-left: 10px;
     width: 65%;
+    resize: none;
+    font-family: Google Sans;
 }
 .main-layout .form-container input[type=text] {
     width: 65%;
@@ -175,9 +181,6 @@ body {
     opacity: 0;
     right: -20px;
     transition: 0.2s;
-}
-.main-layout .form-container .form-button-row .form-button-reset:hover {
-    filter: brightness(95%);
 }
 .main-layout .form-container .form-button-row .form-button-reset:hover span:after {
     opacity: 1;
