@@ -34,7 +34,7 @@ function validateForm() {
         formLabelError[2].style.opacity = "1";
         return false;
     }
-    if (inputQuantity.value == "") {
+    if (inputQuantity.value == "" || inputQuantity.value == "0") {
         formLabel[4].style.color = "red";
         formLabelError[4].style.opacity = "1";
         return false;
