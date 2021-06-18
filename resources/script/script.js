@@ -16,7 +16,7 @@ function getPrice(selected) {
 }
 function calculateAmount() {
     var calcAmount = unitPrice.value * inputQuantity.value;
-    amount.value = calcAmount;
+    amount.value = calcAmount.toFixed(2);
 }
 function validateForm() {
     if (inputName.value == "") {
